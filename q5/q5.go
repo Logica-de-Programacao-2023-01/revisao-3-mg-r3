@@ -5,7 +5,21 @@ package q5
 //alfanuméricos incluem letras e números.
 //
 //Dada uma string "s", retorne verdadeiro se for um palíndromo e falso caso contrário.
+func reverse(str string) string {
+	bytes := []byte(str)
+	length := len(bytes)
+	for i := 0; i < length/2; i++ {
+		bytes[i], bytes[length-i-1] = bytes[length-i-1], bytes[i]
+	}
+	return string(bytes)
+}
 
 func IsPalindrome(s string) bool {
-	return false
+	str := "woooooo"
+	rs := reverse(s)
+	if str == rs {
+		return true
+	} else {
+		return false
+	}
 }
